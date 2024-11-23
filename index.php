@@ -28,6 +28,10 @@
             <li><a href="busca_aluno.php">Busca Aluno</a></li>
             <li><a href="busca_professor.php">Busca Professor</a></li>
         </ul>
+        <hr>
+            <ul>
+            <li><a href="agenda.php">Agenda do dia</a></li>
+        </ul>
     </nav>
 </body>
 </html>

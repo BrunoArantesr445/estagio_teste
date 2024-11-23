@@ -5,6 +5,10 @@ class Local {
 
     public $id;
     public $instituicao;  // Corrigido o nome da variável
+    public $especialidade;
+    public $departamento;
+    public $turno;
+    public $disponibilidade;
     public $observacao;
   
     public function __construct($db) {
@@ -12,11 +16,15 @@ class Local {
     }
 
     public function create() {
-        $query = "INSERT INTO " . $this->table . " SET instituicao=:instituicao, observacao=:observacao";
+        $query = "INSERT INTO " . $this->table . " SET instituicao=:instituicao,especialidade=:especialidade,departamento=:departamento,turno=:turno,disponibilidade=:disponibilidade,observacao=:observacao";
         $stmt = $this->conn->prepare($query);
 
         // Atualizado o bind para ':instituicao' e a variável correta
         $stmt->bindParam(':instituicao', $this->instituicao);
+        $stmt->bindParam(':especialidade', $this->especialidade);
+        $stmt->bindParam(':departamento', $this->departamento);
+        $stmt->bindParam(':turno', $this->turno);
+        $stmt->bindParam(':disponibilidade', $this->disponibilidade);
         $stmt->bindParam(':observacao', $this->observacao);
 
         if ($stmt->execute()) {
