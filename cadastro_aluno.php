@@ -1,6 +1,15 @@
 <?php
+session_start();  // Inicia a sessão
+// Verifica se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+    // Se não estiver autenticado, redireciona para a página de login
+    header("Location: login.php");
+    exit();
+}
 include_once 'Database.php';
 include_once 'Fase.php';
+
+
 
 $database = new Database();
 $db = $database->getConnection();

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    // Se não estiver autenticado, redireciona para a página de login
+    header("Location: login.php");
+    exit();  // Garantir que o código pare de executar após o redirecionamento
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +38,8 @@
         </ul>
         <hr>
             <ul>
-            <li><a href="agenda.php">Agenda do dia</a></li>
+            <li><a href="agenda.php">Agenda do Dia</a></li>
+            <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
 </body>

@@ -1,4 +1,13 @@
 <?php
+
+session_start();  // Inicia a sessão
+// Verifica se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+    // Se não estiver autenticado, redireciona para a página de login
+    header("Location: login.php");
+    exit();
+}
+
 include_once 'Database.php';
 include_once 'Professor.php'; // Certifique-se de que a classe professor está definida e implementa o método read()
  
