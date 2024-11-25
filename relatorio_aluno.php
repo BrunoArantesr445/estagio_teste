@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario'])) {
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['nome'] . "</td>";
-            echo "<td>" . $row['disponibilidade_horario'] . "</td>";
+            echo "<td>" . $row['turno_disponivel'] . "</td>";
             echo "<td>" . $row['fase_estagio'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['telefone'] . "</td>";

@@ -26,13 +26,13 @@ DROP TABLE IF EXISTS `agenda`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agenda` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `professor_id` int DEFAULT NULL,
+  `supervisor_id` int DEFAULT NULL,
   `aluno_id` int DEFAULT NULL,
   `local_id` int DEFAULT NULL,
   `horario` datetime DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `professor_id` (`professor_id`),
+  KEY `supervisor_id` (`supervisor_id`),
   KEY `aluno_id` (`aluno_id`),
   KEY `local_id` (`local_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -59,14 +59,14 @@ CREATE TABLE `alocacoes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `alunos_id` int NOT NULL,
   `locais_estagio_id` int NOT NULL,
-  `professores_id` int NOT NULL,
+  `supervisores_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_alocacoes_alunos1_idx` (`alunos_id`),
   KEY `fk_alocacoes_locais_estagio1_idx` (`locais_estagio_id`),
-  KEY `fk_alocacoes_professores1_idx` (`professores_id`),
+  KEY `fk_alocacoes_supervisores1_idx` (`supervisores_id`),
   CONSTRAINT `fk_alocacoes_alunos1` FOREIGN KEY (`alunos_id`) REFERENCES `alunos` (`id`),
   CONSTRAINT `fk_alocacoes_locais_estagio1` FOREIGN KEY (`locais_estagio_id`) REFERENCES `locais_estagio` (`id`),
-  CONSTRAINT `fk_alocacoes_professores1` FOREIGN KEY (`professores_id`) REFERENCES `professores` (`id`)
+  CONSTRAINT `fk_alocacoes_supervisores1` FOREIGN KEY (`supervisores_id`) REFERENCES `supervisores` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -174,10 +174,10 @@ CREATE TABLE `locais_estagio` (
   `horario_disponivel` enum('Manhã','Tarde','Noite','Manhã e Tarde','Manhã e Noite','Tarde e Noite') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `especialidade` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `fase_estagio` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `professores_id` int NOT NULL,
+  `supervisores_id` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_locais_estagio_professores_idx` (`professores_id`),
-  CONSTRAINT `fk_locais_estagio_professores` FOREIGN KEY (`professores_id`) REFERENCES `professores` (`id`)
+  KEY `fk_locais_estagio_supervisores_idx` (`supervisores_id`),
+  CONSTRAINT `fk_locais_estagio_supervisores` FOREIGN KEY (`supervisores_id`) REFERENCES `supervisores` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -220,13 +220,13 @@ INSERT INTO `local` VALUES (1,'Brisa','jovens superdotados','Senac','integral','
 UNLOCK TABLES;
 
 --
--- Table structure for table `professores`
+-- Table structure for table `supervisores`
 --
 
-DROP TABLE IF EXISTS `professores`;
+DROP TABLE IF EXISTS `supervisores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `professores` (
+CREATE TABLE `supervisores` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `disponibilidade_horario` enum('Manhã','Tarde','Noite','Manhã e Tarde','Manhã e Noite','Tarde e Noite') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -238,13 +238,13 @@ CREATE TABLE `professores` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `professores`
+-- Dumping data for table `supervisores`
 --
 
-LOCK TABLES `professores` WRITE;
-/*!40000 ALTER TABLE `professores` DISABLE KEYS */;
-INSERT INTO `professores` VALUES (1,'marcelocss','Noite','atasanar','3622-0685','atasanar'),(2,'teste final','Noite','jovens superdotados','3622-0685','jovens superdotados'),(3,'y','Noite','jovens superdotados','456789','jovens superdotados');
-/*!40000 ALTER TABLE `professores` ENABLE KEYS */;
+LOCK TABLES `supervisores` WRITE;
+/*!40000 ALTER TABLE `supervisores` DISABLE KEYS */;
+INSERT INTO `supervisores` VALUES (1,'marcelocss','Noite','atasanar','3622-0685','atasanar'),(2,'teste final','Noite','jovens superdotados','3622-0685','jovens superdotados'),(3,'y','Noite','jovens superdotados','456789','jovens superdotados');
+/*!40000 ALTER TABLE `supervisores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

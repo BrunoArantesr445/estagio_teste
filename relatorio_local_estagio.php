@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario'])) {
 }
         include_once 'Database.php';
         include_once 'LocalDepartamento.php';
-        include_once 'Professor.php';
+        include_once 'supervisor.php';
         include_once 'Local.php';
         ?>
 
@@ -29,7 +29,7 @@ if (!isset($_SESSION['usuario'])) {
             <th>Departamento</th>
             <th>Limite de Vagas</th>
             <th>Horário Disponível</th>
-            <th>Professor Responsável</th>
+            <th>supervisor Responsável</th>
             <th>Especialidade</th>
             <th>Fase</th>
         </tr>
@@ -41,11 +41,11 @@ if (!isset($_SESSION['usuario'])) {
         $local_estagio = new LocalDepartamento($db);
         $stmt = $local_estagio->read();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            // Obtenha o nome do professor responsável
-            $professor_id = $row['professor_id'];
-            $professor = new Professor($db);
-            $stmt_professor = $professor->readById($professor_id);
-            $professor_nome = $stmt_professor['nome'];
+            // Obtenha o nome do supervisor responsável
+            $supervisor_id = $row['supervisor_id'];
+            $supervisor = new supervisor($db);
+            $stmt_supervisor = $supervisor->readById($supervisor_id);
+            $supervisor_nome = $stmt_supervisor['nome'];
 
              // Obtenha o nome LOCAL
              $local_id = $row['local'];
@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario'])) {
             echo "<td>" . $row['departamento'] . "</td>";
             echo "<td>" . $row['limite_vagas'] . "</td>";
             echo "<td>" . $row['horario_disponivel'] . "</td>";
-            echo "<td>" . $row['professor'] . "</td>";
+            echo "<td>" . $row['supervisor'] . "</td>";
             echo "<td>" . $row['especialidade'] . "</td>";
             echo "<td>" . $row['fase_estagio'] . "</td>";
             echo "</tr>";

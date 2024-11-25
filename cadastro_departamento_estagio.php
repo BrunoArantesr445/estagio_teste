@@ -53,9 +53,6 @@ if (!isset($_SESSION['usuario'])) {
         <option value="Manhã">Manhã</option>
             <option value="Tarde">Tarde</option>
             <option value="Noite">Noite</option>
-            <option value="Manhã e Tarde">Manhã e Tarde</option>
-            <option value="Manhã e Noite">Manhã e Noite</option>
-            <option value="Tarde e Noite">Tarde e Noite</option>
         </select><br><br>
 
 
@@ -67,26 +64,18 @@ if (!isset($_SESSION['usuario'])) {
             <option value="UC10">UC10</option>
             <option value="UC17">UC17</option>
         </select><br><br>
-
-
-        <label for="professor_id">Professor Responsável:</label>
-        <select id="professor_id" name="professor_id" required>
+        <label for="supervisor_id">supervisor Responsável:</label>
+        <select id="supervisor_id" name="supervisor_id" required>
         <option value=""></option>
             <?php
-            include_once 'Professor.php';
-
-          
-            $professor = new Professor($db);
-            $stmt = $professor->read();
+            include_once 'Supervisor.php';
+            $supervisor = new supervisor($db);
+            $stmt = $supervisor->read();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<option value='" . $row['id'] . "'>" . $row['nome'] . " - " . $row['especialidade'] . "</option>";
             }
             ?>
-        </select><br><br>
-
-     
-       
-
+        </select>
         <input type="submit" value="Cadastrar">
     </form>
   

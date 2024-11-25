@@ -12,7 +12,7 @@ if (!isset($_SESSION['usuario'])) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilinho.css">
-    <title>Relatório de Professor</title>
+    <title>Relatório de supervisor</title>
 </head>
 <body>
 <a href="index.php">Voltar para o menu</a>
@@ -21,6 +21,10 @@ if (!isset($_SESSION['usuario'])) {
         <tr>
             <th>ID</th>
             <th>Local</th>
+            <th>Especialidade</th>
+            <th>Departamento</th>
+            <th>Turno</th>
+            <th>Disponibilidade</th>
             <th>Observação</th>
         </tr>
         <?php
@@ -36,6 +40,10 @@ if (!isset($_SESSION['usuario'])) {
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['instituicao'] . "</td>";
+            echo "<td>" . $row['especialidade'] . "</td>";
+            echo "<td>" . $row['departamento'] . "</td>";
+            echo "<td>" . $row['turno'] . "</td>";
+            echo "<td>" . $row['disponibilidade'] . "</td>";
             echo "<td>" . $row['observacao'] . "</td>";
             echo "</tr>";
         }

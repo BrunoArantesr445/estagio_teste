@@ -31,8 +31,8 @@ $fases = $fase->read();
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
-        <label for="disponibilidade_horario">Disponibilidade de Horário:</label>
-        <select id="disponibilidade_horario" name="disponibilidade_horario" required>
+        <label for="turno_disponivel">Disponibilidade de Horário:</label>
+        <select id="turno_disponivel" name="turno_disponivel" required>
             <option value="Manhã">Manhã</option>
             <option value="Tarde">Tarde</option>
             <option value="Noite">Noite</option>

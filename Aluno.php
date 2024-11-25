@@ -5,7 +5,7 @@ class Aluno {
 
     public $id;
     public $nome;
-    public $disponibilidade_horario;
+    public $turno_disponivel;
     public $fase_estagio;
     public $email;
     public $telefone;
@@ -21,7 +21,7 @@ class Aluno {
     public function create() {
         $query = "INSERT INTO " . $this->table . " SET 
             nome=:nome, 
-            disponibilidade_horario=:disponibilidade_horario, 
+            turno_disponivel=:turno_disponivel, 
             fase_estagio=:fase_estagio,
             email=:email,
             telefone=:telefone,
@@ -34,7 +34,7 @@ class Aluno {
 
         // Bind dos parâmetros
         $stmt->bindParam(':nome', $this->nome);
-        $stmt->bindParam(':disponibilidade_horario', $this->disponibilidade_horario);
+        $stmt->bindParam(':turno_disponivel', $this->turno_disponivel);
         $stmt->bindParam(':fase_estagio', $this->fase_estagio);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':telefone', $this->telefone);
@@ -50,7 +50,7 @@ class Aluno {
     }
 
     public function read() {
-        $query = "SELECT id,nome, disponibilidade_horario, fase_estagio, email, telefone, cpf, turma, status, carga_horaria FROM " . $this->table;
+        $query = "SELECT id,nome, turno_disponivel, fase_estagio, email, telefone, cpf, turma, status, carga_horaria FROM " . $this->table;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -58,7 +58,7 @@ class Aluno {
  
     // Método para buscar alunos pelo nome
     public function searchByName($nome) {
-        $query = "SELECT nome, disponibilidade_horario, fase_estagio, email, telefone, cpf, turma, status, carga_horaria FROM " . $this->table . " WHERE nome LIKE :nome";
+        $query = "SELECT nome, turno_disponivel, fase_estagio, email, telefone, cpf, turma, status, carga_horaria FROM " . $this->table . " WHERE nome LIKE :nome";
         $stmt = $this->conn->prepare($query);
         $nome = "%" . $nome . "%"; // Adiciona os curingas para busca parcial
         $stmt->bindParam(':nome', $nome);

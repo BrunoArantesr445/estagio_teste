@@ -9,21 +9,21 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 include_once 'Database.php';
-include_once 'Professor.php'; // Certifique-se de que a classe professor está definida e implementa o método read()
+include_once 'supervisor.php'; // Certifique-se de que a classe supervisor está definida e implementa o método read()
  
 $database = new Database();
 $db = $database->getConnection();
  
-$professor = new professor($db);
+$supervisor = new supervisor($db);
  
 // Verifica se um nome foi enviado para busca
 $nome_busca = isset($_POST['nome_busca']) ? $_POST['nome_busca'] : '';
  
-// Busca professors pelo nome se houver um termo de busca
+// Busca supervisors pelo nome se houver um termo de busca
 if (!empty($nome_busca)) {
-    $stmt = $professor->searchByName($nome_busca);
+    $stmt = $supervisor->searchByName($nome_busca);
 } else {
-    $stmt = $professor->read(); // Retorna todos os professors se não houver busca
+    $stmt = $supervisor->read(); // Retorna todos os supervisors se não houver busca
 }
 ?>
  
@@ -31,16 +31,16 @@ if (!empty($nome_busca)) {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Busca de professor</title>
+    <title>Busca de supervisor</title>
     <link rel="stylesheet" type="text/css" href="estiloss.css">
 </head>
 <body>
 <a href="index.php">Voltar para o menu</a>
-    <h1>Busca de professores</h1>
+    <h1>Busca de supervisores</h1>
  
     <!-- Formulário de busca -->
-    <form action="busca_professor.php" method="post">
-        <label for="nome_busca">Buscar professor por Nome:</label>
+    <form action="busca_supervisor.php" method="post">
+        <label for="nome_busca">Buscar supervisor por Nome:</label>
         <input type="text" id="nome_busca" name="nome_busca" value="<?php echo htmlspecialchars($nome_busca); ?>">
         <input type="submit" value="Buscar">
     </form>
@@ -69,7 +69,7 @@ if (!empty($nome_busca)) {
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='9'>Nenhum professor encontrado.</td></tr>";
+                echo "<tr><td colspan='9'>Nenhum supervisor encontrado.</td></tr>";
             }
             ?>
         </tbody>

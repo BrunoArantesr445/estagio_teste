@@ -10,8 +10,8 @@ $local_estagio = new LocalEstagio($db);
 $local_estagio->nome = $_POST['nome'];
 $local_estagio->limite_vagas = $_POST['limite_vagas'];
 $local_estagio->horario_disponivel = $_POST['horario_disponivel'];
-$local_estagio->professor_id = $_POST['professor_id'];
-$local_estagio->especialidade_professor = $_POST['especialidade_professor'];
+$local_estagio->supervisor_id = $_POST['supervisor_id'];
+$local_estagio->especialidade_supervisor = $_POST['especialidade_supervisor'];
 $local_estagio->fase_estagio = $_POST['fase_estagio'];
 
 if ($local_estagio->create()) {

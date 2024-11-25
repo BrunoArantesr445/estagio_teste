@@ -12,7 +12,7 @@ $local_estagio->departamento = $_POST['departamento'];
 $local_estagio->especialidade = $_POST['especialidade'];
 $local_estagio->limite_vagas = $_POST['limite_vagas'];
 $local_estagio->horario_disponivel = $_POST['horario_disponivel'];
-$local_estagio->professor_id = $_POST['professor_id'];
+$local_estagio->supervisor_id = $_POST['supervisor_id'];
 $local_estagio->fase_estagio = $_POST['fase_estagio'];
 
 if ($local_estagio->create()) {

@@ -11,7 +11,7 @@ $db = $database->getConnection();
 $aluno = new Aluno($db);
 
 $aluno->nome = $_POST['nome'];
-$aluno->disponibilidade_horario = $_POST['disponibilidade_horario'];
+$aluno->turno_disponivel = $_POST['turno_disponivel'];
 $aluno->fase_estagio = $_POST['fase_estagio'];
 $aluno->email = $_POST['email'];
 $aluno->telefone = $_POST['telefone'];

@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 
     include_once 'Database.php';
     include_once 'LocalDepartamento.php';
-    include_once 'Professor.php';
+    include_once 'supervisor.php';
     include_once 'Local.php';
 ?>
 
@@ -30,7 +30,7 @@ if (!isset($_SESSION['usuario'])) {
             <th>Departamento</th>
             <th>Limite de Vagas</th>
             <th>Horário Disponível</th>
-            <th>Professor Responsável</th>
+            <th>supervisor Responsável</th>
             <th>Especialidade</th>
             <th>Fase</th>
         </tr>
@@ -45,22 +45,22 @@ if (!isset($_SESSION['usuario'])) {
             // Depuração para verificar o conteúdo de $row
             // var_dump($row); // Coloque isso temporariamente para depuração
 
-            // Verifique se 'professor_id' existe no array $row
-            if (isset($row['professor_id'])) {
-                $professor_id = $row['professor_id'];
+            // Verifique se 'supervisor_id' existe no array $row
+            if (isset($row['supervisor_id'])) {
+                $supervisor_id = $row['supervisor_id'];
 
-                // Verifique se o professor existe no banco de dados
-                $professor = new Professor($db);
-                $stmt_professor = $professor->readById($professor_id);
+                // Verifique se o supervisor existe no banco de dados
+                $supervisor = new supervisor($db);
+                $stmt_supervisor = $supervisor->readById($supervisor_id);
 
-                // Verifique se a consulta retornou um professor
-                if ($stmt_professor) {
-                    $professor_nome = $stmt_professor['nome'];
+                // Verifique se a consulta retornou um supervisor
+                if ($stmt_supervisor) {
+                    $supervisor_nome = $stmt_supervisor['nome'];
                 } else {
-                    $professor_nome = 'Não encontrado';  // Caso o professor não exista
+                    $supervisor_nome = 'Não encontrado';  // Caso o supervisor não exista
                 }
             } else {
-                $professor_nome = 'Não atribuído';  // Caso 'professor_id' não esteja presente
+                $supervisor_nome = 'Não atribuído';  // Caso 'supervisor_id' não esteja presente
             }
 
             // Obtenha o nome LOCAL
@@ -75,7 +75,7 @@ if (!isset($_SESSION['usuario'])) {
             echo "<td>" . $row['departamento'] . "</td>";
             echo "<td>" . $row['limite_vagas'] . "</td>";
             echo "<td>" . $row['horario_disponivel'] . "</td>";
-            echo "<td>" . $professor_nome . "</td>";  
+            echo "<td>" . $supervisor_nome . "</td>";  
             echo "<td>" . $row['especialidade'] . "</td>";
             echo "<td>" . $row['fase_estagio'] . "</td>";
             echo "</tr>";

@@ -183,13 +183,13 @@ INSERT INTO `local` VALUES (1,'HCI','.','pronto atendimento','pronto socorro','m
 UNLOCK TABLES;
 
 --
--- Table structure for table `professores`
+-- Table structure for table `supervisores`
 --
 
-DROP TABLE IF EXISTS `professores`;
+DROP TABLE IF EXISTS `supervisores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `professores` (
+CREATE TABLE `supervisores` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `disponibilidade_horario` enum('Manhã','Tarde','Noite','Manhã e Tarde','Manhã e Noite','Tarde e Noite') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -201,13 +201,13 @@ CREATE TABLE `professores` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `professores`
+-- Dumping data for table `supervisores`
 --
 
-LOCK TABLES `professores` WRITE;
-/*!40000 ALTER TABLE `professores` DISABLE KEYS */;
-INSERT INTO `professores` VALUES (1,'igor','Manhã','pronto socorro','216354532','30'),(2,'fabio','Tarde','Urgencias','35412135','20'),(3,'fabio','Tarde','Direito','888999001','20h'),(4,'Professor A','Manhã','Gestão','111222333','20h'),(5,'Professor B','Tarde','Engenharia','444555666','30h'),(6,'Professor C','Noite','Marketing','777888999','25h'),(7,'Professor D','Manhã e Tarde','Saúde','000111222','40h'),(8,'Professor E','Tarde','Educação','333444555','15h'),(9,'Professor F','Manhã','TI','666777888','35h'),(10,'Professor G','Noite','Design','999000111','30h'),(11,'Professor H','Manhã e Tarde','Gastronomia','222333444','20h'),(12,'Professor I','Tarde','Direito','555666777','25h'),(13,'Professor J','Noite','Psicologia','888999000','30h'),(14,'Prof. André Silva','Manhã','Matemática','98888-1111','40h'),(15,'Prof. Beatriz Souza','Tarde','Português','98888-2222','30h'),(16,'Prof. Carlos Santos','Noite','Física','98888-3333','20h'),(17,'Prof. Daniela Almeida','Manhã e Tarde','Química','98888-4444','35h'),(18,'Prof. Eduardo Gomes','Manhã e Noite','Biologia','98888-5555','30h'),(19,'Prof. Fernanda Rocha','Tarde e Noite','Geografia','98888-6666','40h'),(20,'Prof. Gustavo Martins','Manhã','História','98888-7777','25h'),(21,'Prof. Helena Oliveira','Tarde','Inglês','98888-8888','20h'),(22,'Prof. Igor Correia','Noite','Educação Física','98888-9999','30h'),(23,'Prof. Júlia Nascimento','Manhã e Tarde','Artes','98888-0000','35h'),(24,'teteu','Manhã','pediatria',NULL,NULL);
-/*!40000 ALTER TABLE `professores` ENABLE KEYS */;
+LOCK TABLES `supervisores` WRITE;
+/*!40000 ALTER TABLE `supervisores` DISABLE KEYS */;
+INSERT INTO `supervisores` VALUES (1,'igor','Manhã','pronto socorro','216354532','30'),(2,'fabio','Tarde','Urgencias','35412135','20'),(3,'fabio','Tarde','Direito','888999001','20h'),(4,'supervisor A','Manhã','Gestão','111222333','20h'),(5,'supervisor B','Tarde','Engenharia','444555666','30h'),(6,'supervisor C','Noite','Marketing','777888999','25h'),(7,'supervisor D','Manhã e Tarde','Saúde','000111222','40h'),(8,'supervisor E','Tarde','Educação','333444555','15h'),(9,'supervisor F','Manhã','TI','666777888','35h'),(10,'supervisor G','Noite','Design','999000111','30h'),(11,'supervisor H','Manhã e Tarde','Gastronomia','222333444','20h'),(12,'supervisor I','Tarde','Direito','555666777','25h'),(13,'supervisor J','Noite','Psicologia','888999000','30h'),(14,'Prof. André Silva','Manhã','Matemática','98888-1111','40h'),(15,'Prof. Beatriz Souza','Tarde','Português','98888-2222','30h'),(16,'Prof. Carlos Santos','Noite','Física','98888-3333','20h'),(17,'Prof. Daniela Almeida','Manhã e Tarde','Química','98888-4444','35h'),(18,'Prof. Eduardo Gomes','Manhã e Noite','Biologia','98888-5555','30h'),(19,'Prof. Fernanda Rocha','Tarde e Noite','Geografia','98888-6666','40h'),(20,'Prof. Gustavo Martins','Manhã','História','98888-7777','25h'),(21,'Prof. Helena Oliveira','Tarde','Inglês','98888-8888','20h'),(22,'Prof. Igor Correia','Noite','Educação Física','98888-9999','30h'),(23,'Prof. Júlia Nascimento','Manhã e Tarde','Artes','98888-0000','35h'),(24,'teteu','Manhã','pediatria',NULL,NULL);
+/*!40000 ALTER TABLE `supervisores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

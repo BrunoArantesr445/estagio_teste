@@ -8,6 +8,10 @@ $db = $database->getConnection();
 $local  = new Local($db);
 
 $local->instituicao = $_POST['instituicao'];
+$local->especialidade = $_POST['especialidade'];
+$local->departamento = $_POST['departamento'];
+$local->turno = $_POST['turno'];
+$local->disponibilidade = $_POST['disponibilidade'];
 $local->observacao = $_POST['observacao'];
 
 if ($local->create()) {

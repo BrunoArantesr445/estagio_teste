@@ -1,6 +1,6 @@
 <?php
 include_once 'Database.php';
-include_once 'Professor.php';
+include_once 'supervisor.php';
 include_once 'Aluno.php';
 include_once 'Local.php';
 
@@ -9,9 +9,9 @@ $database = new Database();
 $db = $database->getConnection();
 
 // Obtém os dados para exibição
-$stmt_agenda = $db->prepare("SELECT a.*, p.nome AS professor_nome, al.nome AS aluno_nome, l.instituicao AS local_nome
+$stmt_agenda = $db->prepare("SELECT a.*, p.nome AS supervisor_nome, al.nome AS aluno_nome, l.instituicao AS local_nome
 FROM agenda a
-JOIN professores p ON a.professor_id = p.id
+JOIN supervisores p ON a.supervisor_id = p.id
 JOIN alunos al ON a.aluno_id = al.id
 JOIN local l ON a.local_id = l.id
 ORDER BY a.horario ASC LIMIT 0, 5000;");
@@ -33,7 +33,7 @@ $stmt_agenda->execute();
     <table border="1">
         <tr>
             <th>Data e Hora</th>
-            <th>Professor</th>
+            <th>supervisor</th>
             <th>Aluno</th>
             <th>Local de Estágio</th>
             <th>Status</th>
@@ -44,7 +44,7 @@ $stmt_agenda->execute();
         while ($row = $stmt_agenda->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
             echo "<td>" . date("d/m/Y H:i", strtotime($row['horario'])) . "</td>";
-            echo "<td>" . $row['professor_nome'] . "</td>";
+            echo "<td>" . $row['supervisor_nome'] . "</td>";
             echo "<td>" . $row['aluno_nome'] . "</td>";
             echo "<td>" . $row['local_nome'] . "</td>";
             echo "<td>" . $row['status'] . "</td>";

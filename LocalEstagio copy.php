@@ -7,8 +7,8 @@ class LocalEstagio {
     public $nome;
     public $limite_vagas;
     public $horario_disponivel;
-    public $professor_id;
-    public $especialidade_professor;
+    public $supervisor_id;
+    public $especialidade_supervisor;
     public $fase_estagio;
 
     public function __construct($db) {
@@ -16,14 +16,14 @@ class LocalEstagio {
     }
 
     public function create() {
-        $query = "INSERT INTO " . $this->table . " SET nome=:nome, limite_vagas=:limite_vagas, horario_disponivel=:horario_disponivel, professor_id=:professor_id, especialidade_professor=:especialidade_professor, fase_estagio=:fase_estagio";
+        $query = "INSERT INTO " . $this->table . " SET nome=:nome, limite_vagas=:limite_vagas, horario_disponivel=:horario_disponivel, supervisor_id=:supervisor_id, especialidade_supervisor=:especialidade_supervisor, fase_estagio=:fase_estagio";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':nome', $this->nome);
         $stmt->bindParam(':limite_vagas', $this->limite_vagas);
         $stmt->bindParam(':horario_disponivel', $this->horario_disponivel);
-        $stmt->bindParam(':professor_id', $this->professor_id);
-        $stmt->bindParam(':especialidade_professor', $this->especialidade_professor);
+        $stmt->bindParam(':supervisor_id', $this->supervisor_id);
+        $stmt->bindParam(':especialidade_supervisor', $this->especialidade_supervisor);
         $stmt->bindParam(':fase_estagio', $this->fase_estagio);
 
         if ($stmt->execute()) {

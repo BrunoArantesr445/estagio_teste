@@ -1,7 +1,7 @@
 <?php
-class Professor {
+class supervisor {
     private $conn;
-    private $table = 'professores';
+    private $table = 'supervisores';
 
     public $id;
     public $nome;
@@ -59,7 +59,7 @@ class Professor {
 
             return $row; // Retorna o array de dados
         } else {
-            return null; // Retorna null se não encontrar o professor
+            return null; // Retorna null se não encontrar o supervisor
         }
     }
 
