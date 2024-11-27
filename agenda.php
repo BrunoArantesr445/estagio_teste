@@ -1,6 +1,6 @@
 <?php
 include_once 'Database.php';
-include_once 'supervisor.php';
+include_once 'Supervisor.php';
 include_once 'Aluno.php';
 include_once 'Local.php';
 
@@ -11,7 +11,7 @@ $db = $database->getConnection();
 // Obtém os dados para exibição
 $stmt_agenda = $db->prepare("SELECT a.*, p.nome AS supervisor_nome, al.nome AS aluno_nome, l.instituicao AS local_nome
 FROM agenda a
-JOIN supervisores p ON a.supervisor_id = p.id
+JOIN supervisor p ON a.supervisor_id = p.id
 JOIN alunos al ON a.aluno_id = al.id
 JOIN local l ON a.local_id = l.id
 ORDER BY a.horario ASC LIMIT 0, 5000;");
