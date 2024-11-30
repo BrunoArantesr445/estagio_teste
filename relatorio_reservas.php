@@ -21,8 +21,8 @@ if (!isset($_SESSION['usuario'])) {
         <tr>
             <th>ID Alocação</th>
             <th>Nome do Aluno</th>
-            <th>Nome do Local de Estágio</th>
-            <th>Departamento</th>
+            <th>Supervisor</th>
+            <th>Falta</th>
         </tr>
         <?php
         include_once 'Database.php';
