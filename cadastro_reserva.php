@@ -20,11 +20,11 @@ if (!isset($_SESSION['usuario'])) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>Cadastro de Alocação</title>
+    <title>Cadastro De Reservas</title>
 </head>
 <body>
     <a href="index.php">Voltar para o menu</a>
-    <h1>Cadastro de Alocação</h1>
+    <h1>Cadastro De Reservas</h1>
 
     <form action="processa_cadastro_alocacao.php" method="post">
      
@@ -69,7 +69,7 @@ if (!isset($_SESSION['usuario'])) {
             ?>
         </select><br><br>
 
-        <input type="submit" value="Alocar">
+        <input type="submit" value="Reservar">
     </form>
 </body>
 </html>

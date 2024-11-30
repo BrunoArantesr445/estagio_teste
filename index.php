@@ -21,7 +21,7 @@ if (!isset($_SESSION['usuario'])) {
             <li><a href="cadastro_surpervisor.php">Cadastro de Supervisor</a></li>
             <li><a href="cadastro_local_estagio.php">Cadastro de Local de Estágio</a></li>
             <li><a href="cadastro_departamento_estagio.php">Cadastro de Departamento de Estágio</a></li>
-            <li><a href="cadastro_alocacao.php">Cadastro de Alocação</a></li>
+            <li><a href="cadastro_reserva.php">Cadastro de Reserva</a></li>
             </ul>  
             <hr>
             <ul>
