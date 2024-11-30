@@ -33,7 +33,7 @@ if (!empty($nome_busca)) {
 <head>
     <meta charset="UTF-8">
     <title>Busca de Aluno</title>
-    <link rel="stylesheet" type="text/css" href="estiloss.css">
+    <link rel="stylesheet" type="text/css" href="estilo_supervisores.css">
 </head>
 <body>
 <a href="index.php">Voltar para o menu</a>

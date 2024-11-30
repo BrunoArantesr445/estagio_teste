@@ -32,11 +32,11 @@ if (!empty($nome_busca)) {
 <head>
     <meta charset="UTF-8">
     <title>Busca de supervisor</title>
-    <link rel="stylesheet" type="text/css" href="estiloss.css">
+    <link rel="stylesheet" type="text/css" href="estilo_supervisores.css">
 </head>
 <body>
 <a href="index.php">Voltar para o menu</a>
-    <h1>Busca de supervisores</h1>
+    <h1>Busca de Supervisores</h1>
  
     <!-- Formulário de busca -->
     <form action="busca_supervisor.php" method="post">
