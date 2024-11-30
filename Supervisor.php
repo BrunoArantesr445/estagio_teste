@@ -1,7 +1,7 @@
 <?php
 class supervisor {
     private $conn;
-    private $table = 'supervisores';
+    private $table = 'supervisor';
 
     public $id;
     public $nome;

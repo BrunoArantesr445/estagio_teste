@@ -9,12 +9,12 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 include_once 'Database.php';
-include_once 'supervisor.php'; // Certifique-se de que a classe supervisor está definida e implementa o método read()
+include_once 'Supervisor.php'; // Certifique-se de que a classe supervisor está definida e implementa o método read()
  
 $database = new Database();
 $db = $database->getConnection();
  
-$supervisor = new supervisor($db);
+$supervisor = new Supervisor($db);
  
 // Verifica se um nome foi enviado para busca
 $nome_busca = isset($_POST['nome_busca']) ? $_POST['nome_busca'] : '';
