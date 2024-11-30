@@ -58,7 +58,7 @@ LIMIT 100;
             echo "<td>" . htmlspecialchars(date("d/m/Y", strtotime($row['data']))) . "</td>";
             echo "<td>" . htmlspecialchars($row['aluno_nome']) . "</td>";
             echo "<td>" . htmlspecialchars($row['supervisor_nome']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['falta'] ?? 'N/A') . "</td>";
+            echo "<td>" . htmlspecialchars($row['fatla'] ?? 'N/A') . "</td>";
             echo "</tr>";
         }
         ?>

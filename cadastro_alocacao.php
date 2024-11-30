@@ -27,14 +27,47 @@ if (!isset($_SESSION['usuario'])) {
     <h1>Cadastro de Alocação</h1>
 
     <form action="processa_cadastro_alocacao.php" method="post">
-        <label for="nome">Nome do Aluno:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
+     
+    <label for="aluno">Nome Do Aluno:</label>
+        <select id="aluno" name="aluno" required>
+        <option value=""></option>
+            <?php
+            include_once 'Aluno.php';
+           $aluno = new Aluno($db);
+            $stmt = $aluno->read();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+            }
+            ?>
+        </select><br><br>
 
-        <label for="local">Local de Estágio:</label>
-        <input type="text" id="local" name="local" required><br><br>
 
-        <label for="departamento">Departamento:</label>
-        <input type="text" id="departamento" name="departamento" required><br><br>
+       
+        <label for="localdepartamento">Local De Estagio:</label>
+        <select id="localdepartamento" name="localdepartamento" required>
+        <option value=""></option>
+            <?php
+            include_once 'LocalDepartamento.php';
+           $localdepartamento = new LocalDepartamento($db);
+            $stmt = $localdepartamento->read();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $row['id'] . "'>" . $row['local'] . "</option>";
+            }
+            ?>
+        </select><br><br>
+
+        <label for="localdepartamento">Departamento:</label>
+        <select id="localdepartamento" name="localdepartamento" required>
+        <option value=""></option>
+            <?php
+            include_once 'LocalDepartamento.php';
+           $localdepartamento = new LocalDepartamento($db);
+            $stmt = $localdepartamento->read();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $row['id'] . "'>" . $row['departamento'] . "</option>";
+            }
+            ?>
+        </select><br><br>
 
         <input type="submit" value="Alocar">
     </form>

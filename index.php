@@ -28,7 +28,7 @@ if (!isset($_SESSION['usuario'])) {
             <li><a href="relatorio_aluno.php">Relatório de Aluno</a></li>
             <li><a href="relatorio_supervisor.php">Relatório de Supervisor</a></li>
             <li><a href="relatorio_local.php">Relatório de Local de Estágio</a></li>
-            <li><a href="relatorio_local_estagio.php">Relatório de Departamento de Estágio</a></li>
+            <li><a href="relatorio_local_departamento_estagio.php">Relatório de Departamento de Estágio</a></li>
             <li><a href="relatorio_alocacoes.php">Relatório de Alocações</a></li>
         </ul>
         <hr>

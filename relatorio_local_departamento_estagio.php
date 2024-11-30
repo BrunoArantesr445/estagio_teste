@@ -39,12 +39,11 @@ try {
 
 <body>
     <a href="index.php">Voltar para o menu</a>
-    <h1>Relatório de Locais de Estágio</h1>
+    <h1>Relatório de Departamentos de Estágio</h1>
 
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Local</th>
             <th>Departamento</th>
             <th>Limite de Vagas</th>
             <th>Horário Disponível</th>
@@ -63,7 +62,6 @@ try {
 
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['local']) . "</td>";
             echo "<td>" . htmlspecialchars($row['departamento']) . "</td>";
             echo "<td>" . htmlspecialchars($row['limite_vagas']) . "</td>";
             echo "<td>" . htmlspecialchars($row['turno']) . "</td>";
