@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 
     include_once 'Database.php';
     include_once 'LocalDepartamento.php';
-    include_once 'supervisor.php';
+    include_once 'Supervisor.php';
     include_once 'Local.php';
 ?>
 

@@ -18,7 +18,7 @@ if (!isset($_SESSION['usuario'])) {
     <nav>
         <ul>
             <li><a href="cadastro_aluno.php">Cadastro de Aluno</a></li>
-            <li><a href="cadastro_supervisor.php">Cadastro de Supervisor</a></li>
+            <li><a href="cadastro_surpervisor.php">Cadastro de Supervisor</a></li>
             <li><a href="cadastro_local_estagio.php">Cadastro de Local de Estágio</a></li>
             <li><a href="cadastro_departamento_estagio.php">Cadastro de Departamento de Estágio</a></li>
             <li><a href="cadastro_alocacao.php">Cadastro de Alocação</a></li>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['usuario'])) {
         </ul>
         <hr>
             <ul>
-            <li><a href="agenda.php">Agenda do Dia</a></li>
+            <li><a href="reserva.php">Reservas do Dia</a></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
