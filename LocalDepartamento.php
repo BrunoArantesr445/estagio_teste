@@ -10,6 +10,7 @@ class LocalDepartamento {
     public $especialidade;
     public $horario_disponivel;
     public $fase_estagio;
+    public $supervisor_id;
 
     public function __construct($db) {
         $this->conn = $db;

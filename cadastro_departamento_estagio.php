@@ -24,20 +24,7 @@ if (!isset($_SESSION['usuario'])) {
     <h1>Cadastro de Departamento de Estágio</h1>
     <form action="processa_cadastro_departamento_estagio.php" method="post">
       
-        <label for="nome">Local:</label>
-        <select id="local" name="local" required>
-        <option value=""></option>         
-      <?php
-      include_once 'Local.php';
-
-    
-      $local = new Local($db);
-      $stmt = $local->read();
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          echo "<option value='" . $row['id'] . "'>" . $row['instituicao'] .  "</option>";
-      }
-      ?>
-        </select><br><br>
+       
 
         <label for="departamento">Nome do Departamento:</label>
         <input type="text" id="departamento" name="departamento" required><br><br>
@@ -64,7 +51,7 @@ if (!isset($_SESSION['usuario'])) {
             <option value="UC10">UC10</option>
             <option value="UC17">UC17</option>
         </select><br><br>
-        <label for="supervisor_id">supervisor Responsável:</label>
+        <label for="supervisor_id">Supervisor Responsável:</label>
         <select id="supervisor_id" name="supervisor_id" required>
         <option value=""></option>
             <?php

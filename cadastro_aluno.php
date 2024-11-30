@@ -36,9 +36,6 @@ $fases = $fase->read();
             <option value="Manhã">Manhã</option>
             <option value="Tarde">Tarde</option>
             <option value="Noite">Noite</option>
-            <option value="Manhã e Tarde">Manhã e Tarde</option>
-            <option value="Manhã e Noite">Manhã e Noite</option>
-            <option value="Tarde e Noite">Tarde e Noite</option>
         </select><br><br>
 
         <label for="fase_estagio">Fase do Estágio:</label>
