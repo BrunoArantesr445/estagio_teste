@@ -12,16 +12,24 @@ try {
 // Consulta otimizada para a tabela "reserva" com JOINs
 try {
     $query = "
-       SELECT 
-    r.data, 
-    a.nome AS aluno_nome, 
-    s.nome AS supervisor_nome, 
+SELECT 
+    r.id,
+    r.data,
+    a.nome AS aluno_nome,
+    s.nome AS supervisor_nome,
     r.fatla
-FROM reserva r
-JOIN alunos a ON r.alunos_id = a.id
-JOIN supervisor s ON r.supervisor_id = s.id
-ORDER BY r.data ASC
-LIMIT 100;
+FROM 
+    reserva r
+JOIN 
+    alunos a ON r.alunos_id = a.id
+JOIN 
+    supervisor s ON r.supervisor_id = s.id
+WHERE 
+    r.data >= CURDATE()
+ORDER BY 
+    r.data ASC
+LIMIT 2;
+
 ";
     
     $stmt = $db->prepare($query);

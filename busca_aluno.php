@@ -67,14 +67,15 @@ if (!empty($nome_busca)) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['disponibilidade_horario']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['fase_estagio']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['telefone']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['cpf']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['turma']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['fase_estagio']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['turno_disponivel']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['status']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['carga_horaria']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['turma']) . "</td>";
+
                     echo "</tr>";
                 }
             } else {

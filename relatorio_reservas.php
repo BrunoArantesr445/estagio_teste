@@ -11,12 +11,12 @@ if (!isset($_SESSION['usuario'])) {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilinho.css">
-    <title>Relatório de Alocações</title>
+    <link rel="stylesheet" type="text/css" href="estiloss.css">
+    <title>Relatório de Todas As Reservas</title>
 </head>
 <body>
     <a href="index.php">Voltar para o menu</a>
-    <h1>Relatório de Alocações</h1>
+    <h1>Relatório de Todas As Reservas</h1>
     <table border="1">
         <tr>
             <th>ID Alocação</th>
@@ -32,13 +32,13 @@ if (!isset($_SESSION['usuario'])) {
         $db = $database->getConnection();
 
         $alocacao = new Alocacao($db);
-        $stmt = $alocacao->read();
+        $stmt = $alocacao->readAllReservas();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
-            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['local']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['departamento']) . "</td>";
+            echo "<td>" . htmlspecialchars(date("d/m/Y", strtotime($row['data']))) . "</td>";
+            echo "<td>" . htmlspecialchars($row['aluno_nome']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['supervisor_nome']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['fatla'] ?? 'N/A') . "</td>";
             echo "</tr>";
         }
         ?>

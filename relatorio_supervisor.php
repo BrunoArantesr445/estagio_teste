@@ -53,6 +53,7 @@ try {
     <meta charset="UTF-8">
     <title>Relatório de Supervisores</title>
     <link rel="stylesheet" href="estilinho.css">
+    <link rel="stylesheet" type="text/css" href="estiloss.css">
 </head>
 
 <body>

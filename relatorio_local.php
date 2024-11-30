@@ -34,6 +34,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilinho.css">
+    <link rel="stylesheet" type="text/css" href="estiloss.css">
     <title>Relatório de Locais de Estágio</title>
 </head>
 
